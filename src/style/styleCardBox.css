@@ -1,0 +1,15 @@
+/*.card {
+    height: 300px; 
+}
+
+.card-img-top {
+    object-fit: cover;
+    height: 100%; 
+}*/
+.img-photographer{
+    width: 27%;
+    height: 83%;
+    border: 2px solid #ccc; /* Цвет и толщина рамки */
+    border-radius: 10px; /* Закругление углов */
+    overflow: hidden; /* Скрыть часть изображения, если оно выходит за рамки */
+}
