@@ -11,7 +11,7 @@ export default function AddPost() {
    const [error, setError] = React.useState(''); // Состояние для хранения ошибки
      React.useEffect(() => {
          const getGener = async () => {
-             const response = await axios.get(`http://localhost:5000/geners`);
+             const response = await axios.get(`https://backender-baedc14d3753.herokuapp.com/geners`);
              setGener(response.data);
          };
          getGener();
@@ -70,7 +70,7 @@ export default function AddPost() {
             }
     
             // Отправка запроса на сервер для создания поста
-            await axios.post(`http://localhost:5000/galery`, {
+            await axios.post(`https://backender-baedc14d3753.herokuapp.com/galery`, {
                 title: title,
                 description: description,
                 generId: generId,
@@ -81,7 +81,7 @@ export default function AddPost() {
             //--upload image server
             let formData = new FormData();
             formData.append('file', image.data);
-            await fetch(`http://localhost:5000/image`, {
+            await fetch(`https://backender-baedc14d3753.herokuapp.com/image`, {
                 method: 'POST',
                 body: formData,
             });

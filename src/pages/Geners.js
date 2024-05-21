@@ -8,7 +8,7 @@ export default function Geners({generId, onClickGener}) {
     const [geners, setGener] = useState([]);
     useEffect(() => {
         const getGener = async () => {
-            const response = await axios.get(`http://localhost:5000/geners`);
+            const response = await axios.get(`https://backender-baedc14d3753.herokuapp.com/geners`);
             setGener(response.data);
         };
         getGener();  

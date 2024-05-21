@@ -42,7 +42,7 @@ export default function DetailGaleryPost() {
     
         const getPostById = async () => {
             try {
-                const response = await axios.get(`http://localhost:5000/galery/${id}`);
+                const response = await axios.get(`https://backender-baedc14d3753.herokuapp.com/galery/${id}`);
                 console.log('Response data:', response.data);
                 setPost(response.data);
                 setUser(response.data.user);
@@ -54,7 +54,7 @@ export default function DetailGaleryPost() {
     
         const getCommentsByPostId = async () => {
             try {
-                const response = await axios.get(`http://localhost:5000/comments/${id}`);
+                const response = await axios.get(`https://backender-baedc14d3753.herokuapp.com/comments/${id}`);
                 setComments(response.data);
             } catch (error) {
                 console.error('Error fetching comments:', error.message);
@@ -91,7 +91,7 @@ export default function DetailGaleryPost() {
       //  userId: userId,
     // });
       try {
-          await axios.post(`http://localhost:5000/comments`, {
+          await axios.post(`https://backender-baedc14d3753.herokuapp.com/comments`, {
               body_text: newComment,
               postId: id,
               userId: userId,
@@ -106,7 +106,7 @@ export default function DetailGaleryPost() {
   const deleteComment = async (id) => {
     if (window.confirm('Вы действительно хотите удалить комментарий?')) {
       try {
-        await axios.delete(`http://localhost:5000/comments/${id}`);
+        await axios.delete(`https://backender-baedc14d3753.herokuapp.com/comments/${id}`);
         getCommentsByPostId();
       } catch (error) {
         console.error('Error deleting comment:', error.message);

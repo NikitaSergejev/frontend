@@ -41,7 +41,7 @@ export default function AddNews() {
     const savePost = async (e) => {
         e.preventDefault();
         try{
-            await axios.post(`http://localhost:5000/posts`, {
+            await axios.post(`https://backender-baedc14d3753.herokuapp.com/posts`, {
                 title: title,
                 description: description,               
                 userId: userId,
@@ -50,7 +50,7 @@ export default function AddNews() {
             //--upload image server
             let formData = new FormData();
             formData.append('file', image.data);
-            await fetch(`http://localhost:5000/image`,{
+            await fetch(`https://backender-baedc14d3753.herokuapp.com/image`,{
                 method: 'POST',
                 body: formData,
             });

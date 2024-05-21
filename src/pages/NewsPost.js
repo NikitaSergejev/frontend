@@ -12,7 +12,7 @@ export default function NewsPost({searchValue}) {
 
     useEffect(() => {
         const fetchPosts = async () => {
-            const response = await axios.get(`http://localhost:5000/posts`);
+            const response = await axios.get(`https://backender-baedc14d3753.herokuapp.com/posts`);
             setPosts(response.data);
         };
         fetchPosts();

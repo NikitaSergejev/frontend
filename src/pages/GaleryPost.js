@@ -34,7 +34,7 @@ useEffect(() => {
   //маршруты, если выбрана или НЕ выбрана категория
   const gener_id = generId > 0 ? `/gener/${generId}` : '';
   const getPosts = async () => {
-      const response = await axios.get(`http://localhost:5000/galery${gener_id}`); // Get posts
+      const response = await axios.get(`https://backender-baedc14d3753.herokuapp.com/galery${gener_id}`); // Get posts
       setPosts(response.data);
       
   };
@@ -52,7 +52,7 @@ useEffect(() => {
   if (window.confirm('Вы действительно хотите удалить пост?')) {
     try {    
       // Удаление поста из базы данных
-      await axios.delete(`http://localhost:5000/galery/${id}`);
+      await axios.delete(`https://backender-baedc14d3753.herokuapp.com/galery/${id}`);
       
       // Обновляем список постов после удаления
       setPosts(posts.filter(post => post.id !== id));

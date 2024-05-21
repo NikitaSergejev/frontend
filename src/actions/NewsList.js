@@ -13,13 +13,13 @@ export default function NewsList() {
  },[]);
  //Список новостей из БД
  const getPosts = async() =>{
-    const response = await axios.get(`http://localhost:5000/posts`);
+    const response = await axios.get(`https://backender-baedc14d3753.herokuapp.com/posts`);
     setPosts(response.data);
  };
  //удалить новость
  const deletePost = async(id) =>{
     if (window.confirm('Вы действительно хотите удалить новсостной пост'+id+'?')){
-        await axios.delete(`http://localhost:5000/posts/${id}`);
+        await axios.delete(`https://backender-baedc14d3753.herokuapp.com/posts/${id}`);
         getPosts();
     }
  }

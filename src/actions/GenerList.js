@@ -11,13 +11,13 @@ export default function GenerList() {
     },[]);
     //Список новостей из БД
     const getGener = async() =>{
-       const response = await axios.get(`http://localhost:5000/geners`);
+       const response = await axios.get(`https://backender-baedc14d3753.herokuapp.com/geners`);
        setGener(response.data);
     };
     //удалить новость
     const deleteGener = async(id) =>{
        if (window.confirm('Вы действительно хотите удалить жанр'+id+'?')){
-           await axios.delete(`http://localhost:5000/geners/${id}`);
+           await axios.delete(`https://backender-baedc14d3753.herokuapp.com/geners/${id}`);
            getGener();
        }
     }

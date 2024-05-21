@@ -13,7 +13,7 @@ export default function EditPost() {
  const [user] = React.useState(jwtDecode(localStorage.getItem('token')));
  React.useEffect(() =>{
      const getCategory = async () => {
-         const response = await axios.get(`http://localhost:5000/geners`);
+         const response = await axios.get(`https://backender-baedc14d3753.herokuapp.com/geners`);
          setGener(response.data);
      };
      getCategory();
@@ -44,7 +44,7 @@ export default function EditPost() {
 React.useEffect(() => {
  //-------post By id
  const getPostById = async () => {
-     const response = await axios.get(`http://localhost:5000/galery/${id}`);
+     const response = await axios.get(`https://backender-baedc14d3753.herokuapp.com/galery/${id}`);
      setTitle(response.data.title);
      setDescription(response.data.description);
      setFile(response.data.image);
@@ -84,7 +84,7 @@ const updatePost = async (e) => {
     };
     if(validateForm()){
        try{
-        await axios.patch(`http://localhost:5000/galery/${id}`, {
+        await axios.patch(`https://backender-baedc14d3753.herokuapp.com/galery/${id}`, {
                 title: title,
                 description: description,
                 generId: generId,                
@@ -93,7 +93,7 @@ const updatePost = async (e) => {
             //--upload image server
             let formData = new FormData();
             formData.append('file', image.data);
-            await fetch(`http://localhost:5000/image`,{
+            await fetch(`https://backender-baedc14d3753.herokuapp.com/image`,{
                 method: 'POST',
                 body: formData,
             });

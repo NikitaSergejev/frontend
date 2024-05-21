@@ -11,7 +11,7 @@ export default function DetailNewsPost() {
 
     React.useEffect(() => {
         const getPostById = async() => {
-            const response = await axios.get(`http://localhost:5000/posts/${id}`);
+            const response = await axios.get(`https://backender-baedc14d3753.herokuapp.com/posts/${id}`);
             setPost(response.data);
             
         };

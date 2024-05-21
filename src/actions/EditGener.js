@@ -13,7 +13,7 @@ const {id} = useParams();
 React.useEffect(() =>{
  //-------category By id
     const getGenerById = async() =>{
-    const response = await axios.get(`http://localhost:5000/geners/${id}`);
+    const response = await axios.get(`https://backender-baedc14d3753.herokuapp.com/geners/${id}`);
     setname(response.data.name);
 };
 getGenerById();
@@ -22,7 +22,7 @@ getGenerById();
 const updateGener = async (e) => {
   e.preventDefault();
   try{
-  await axios.patch(`http://localhost:5000/geners/${id}`, {
+  await axios.patch(`https://backender-baedc14d3753.herokuapp.com/geners/${id}`, {
               name:name
           });          
           //end upload server

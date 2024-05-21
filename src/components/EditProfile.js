@@ -44,7 +44,7 @@ export default function EditProfile() {
         try {       
          // const token = window.localStorage.getItem('token');
          // const decoded = jwtDecode(token);
-          const response = await axios.patch(`http://localhost:5000/users/auth/update`, { 
+          const response = await axios.patch(`https://backender-baedc14d3753.herokuapp.com/users/auth/update`, { 
             name: name,
             password: password,
             confPassword: confPassword,

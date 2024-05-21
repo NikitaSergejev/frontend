@@ -28,7 +28,7 @@ export default function EditNews() {
  React.useEffect(() => {
   //-------post By id
   const getPostById = async () => {
-      const response = await axios.get(`http://localhost:5000/posts/${id}`);
+      const response = await axios.get(`https://backender-baedc14d3753.herokuapp.com/posts/${id}`);
       setTitle(response.data.title);
       setDescription(response.data.description);
       setFile(response.data.image);
@@ -40,7 +40,7 @@ export default function EditNews() {
  //----------сохранение записи в БД и загрузка image на сервер
  const updatePost = async (e) => {
   e.preventDefault();
-  await axios.patch(`http://localhost:5000/posts/${id}`, {
+  await axios.patch(`https://backender-baedc14d3753.herokuapp.com/posts/${id}`, {
               title: title,
               description: description,              
               image: file,
@@ -48,7 +48,7 @@ export default function EditNews() {
           //--upload image server
           let formData = new FormData();
           formData.append('file', image.data);
-    await fetch(`http://localhost:5000/image`,{
+    await fetch(`https://backender-baedc14d3753.herokuapp.com/image`,{
               method: 'POST',
               body: formData,
           });
