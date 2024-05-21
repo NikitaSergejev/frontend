@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const instance = axios.create({
-    baseURL: 'http://localhost:5000',
+    baseURL: 'https://backender-baedc14d3753.herokuapp.com',
 });
 //middleware проверяет есть token или нет 
 //для любого запроса проверяем, есть ли в localStorage что-то
