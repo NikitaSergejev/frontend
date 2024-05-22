@@ -48,7 +48,7 @@ export default function NewsPost({searchValue}) {
                         <p>
                             <span className='fst-italic'>Дата публикации:</span> {data.createdAt}
                         </p>
-                        <Link to={`/detailpost/${data.id}`} className="me-1">
+                        <Link to={`/detailpost/${data.id}`} className="me-1 mb-2">
                             Подробнее
                         </Link>
                     </Col>
