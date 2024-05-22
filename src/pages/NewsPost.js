@@ -38,7 +38,7 @@ export default function NewsPost({searchValue}) {
     
    <p>Количество новостей: {filteredPosts.length}</p>
             {filteredPosts.map(data => (
-                <Row className="m-3 bg-light" key={data.id}>
+                <Row className="m-3 bg-light mb-5" key={data.id}>
                     <Col md="3">
                         <img className='mr-3 img-thumbnail' src={'/images/' + data.image} alt='Логотип' />
                     </Col>
@@ -48,7 +48,7 @@ export default function NewsPost({searchValue}) {
                         <p>
                             <span className='fst-italic'>Дата публикации:</span> {data.createdAt}
                         </p>
-                        <Link to={`/detailpost/${data.id}`} className="me-1 mb-2">
+                        <Link to={`/detailpost/${data.id}`} className="me-1">
                             Подробнее
                         </Link>
                     </Col>

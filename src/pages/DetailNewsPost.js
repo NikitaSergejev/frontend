@@ -22,7 +22,7 @@ export default function DetailNewsPost() {
   return (
     <Container className='mt-1'>
         <h2 className='text-center m-4'>Новость</h2>
-        <Row className='mt-2 bg-light' key={post.id}>
+        <Row className='mt-2 bg-light mb-5' key={post.id}>
             <Col md="3">
                 <img className='mr-3 img-thumbnail' src={'/images/' + post.image} alt='Logo' />
             </Col>
